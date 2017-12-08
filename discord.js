@@ -73,6 +73,12 @@ client.on("message", async message => {
     let randomReply = randomFudReply[Math.floor(Math.random() * randomFudReply.length)];
     message.channel.send(`${randomReply} -- This FUD has been controlled by the FUDBot`);
   }
+
+  if ( /sage/ig.test(message.content) === true &&
+        (/leaving/ig.test(message.content) === true) {
+    let randomReply = randomFudReply[Math.floor(Math.random() * randomFudReply.length)];
+    message.channel.send(`Sagemark is not leaving. -- This FUD has been controlled by the FUDBot`);
+  }
 });
 
 client.login(config.token);
