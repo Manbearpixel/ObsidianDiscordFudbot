@@ -70,7 +70,7 @@ client.on("message", async message => {
 
   if ( /fud/ig.test(message.content) === true &&
         (/biz/ig.test(message.content) === true || /4chan/ig.test(message.content) === true) ) {
-    let randomReply = randomFudReply[Math.floor(Math.random() * myArray.length)];
+    let randomReply = randomFudReply[Math.floor(Math.random() * randomFudReply.length)];
     message.channel.send(`${randomReply} -- This FUD has been controlled by the FUDBot`);
   }
 });
