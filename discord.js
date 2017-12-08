@@ -73,10 +73,13 @@ client.on("message", async message => {
     let randomReply = randomFudReply[Math.floor(Math.random() * randomFudReply.length)];
     message.channel.send(`${randomReply} -- This FUD has been controlled by the FUDBot`);
   }
-
-  if ( /sage/ig.test(message.content) === true &&
+  else if ( /sage/ig.test(message.content) === true &&
         /leaving/ig.test(message.content) === true) {
     message.channel.send(`Sagemark is not leaving. -- This FUD has been controlled by the FUDBot`);
+  }
+  else if ( /dev/ig.test(message.content) === true &&
+        /dump/ig.test(message.content) === true) {
+    message.channel.send(`The only dumping going on is the unfortunate oil spills occurring every day that are not discussed in the news. It's really sad... -- This FUD has been controlled by the FUDBot`);
   }
 });
 
