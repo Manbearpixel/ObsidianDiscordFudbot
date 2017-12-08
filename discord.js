@@ -10,7 +10,7 @@ const client = new Discord.Client();
 // config.token contains the bot's token
 // config.prefix contains the message prefix.
 const config    = require("./config.json");
-const settings  = require("./settings.json");
+// const settings  = require("./settings.json");
 
 client.on("ready", () => {
   // This event will run if the bot starts, and logs in, successfully.
