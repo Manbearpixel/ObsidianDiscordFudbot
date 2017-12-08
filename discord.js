@@ -68,6 +68,13 @@ client.on("message", async message => {
     'Buy the FUD! Sell the FOMO! *(this is not real trading advice)*'
   ];
 
+  let randomScamReply = [
+    'Fake news',
+    'Don\'t believe everything you read on the internet',
+    'Pravik Pajeet has been thoroughly vetted by the Securities and Exchange Board of India and has been granted a legitimacy rating of 10/10',
+    'http://a.co/fwMoKhL',
+  ];
+
   if ( /fud/ig.test(message.content) === true &&
         (/biz/ig.test(message.content) === true || /4chan/ig.test(message.content) === true) ) {
     let randomReply = randomFudReply[Math.floor(Math.random() * randomFudReply.length)];
@@ -79,7 +86,21 @@ client.on("message", async message => {
   }
   else if ( /dev/ig.test(message.content) === true &&
         /dump/ig.test(message.content) === true) {
-    message.channel.send(`The only dumping going on is the unfortunate oil spills occurring every day that are not discussed in the news. It's really sad... -- This FUD has been controlled by the FUDBot`);
+    message.channel.send(`The only dumping going on are the unfortunate oil spills occurring every day that are not discussed in the news. It's really sad... -- This FUD has been controlled by the FUDBot`);
+
+    setTimeout(() => {
+      message.channel.send(`Seriously guys... think of the poor animals... :'('`);
+    }, Math.floor(Math.random() * 10000) + 1000);
+  }
+  else if ( /scam/ig.test(message.content) === true &&
+        (/team/ig.test(message.content) === true ||
+        /obsidian/ig.test(message.content) === true ||
+      /odn/ig.test(message.content) === true || ) ) {
+    let randomReply = randomScamReply[Math.floor(Math.random() * randomScamReply.length)];
+    message.channel.send(`${randomReply} -- This FUD has been controlled by the FUDBot`).then((Message) => {
+      Message.react("😂");
+      Message.react("👌");
+    });
   }
 });
 
