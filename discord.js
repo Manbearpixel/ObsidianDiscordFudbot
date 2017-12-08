@@ -95,7 +95,7 @@ client.on("message", async message => {
   else if ( /scam/ig.test(message.content) === true &&
         (/team/ig.test(message.content) === true ||
         /obsidian/ig.test(message.content) === true ||
-      /odn/ig.test(message.content) === true || ) ) {
+      /odn/ig.test(message.content) === true ) ) {
     let randomReply = randomScamReply[Math.floor(Math.random() * randomScamReply.length)];
     message.channel.send(`${randomReply} -- This FUD has been controlled by the FUDBot`).then((Message) => {
       Message.react("😂");
