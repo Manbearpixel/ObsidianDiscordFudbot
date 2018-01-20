@@ -1,6 +1,6 @@
 {
   "name": "odn-fudbot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Discord Fudbot for Obsidian",
   "main": "discord.js",
   "dependencies": {
@@ -10,7 +10,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node discord.js"
+    "dev": "node discord.js",
+    "start": "forever start ./forever/production.json",
+    "stop": "forever stop discord-fudbot"
   },
   "author": "",
   "license": "ISC"
